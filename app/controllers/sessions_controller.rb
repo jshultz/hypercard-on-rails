@@ -4,6 +4,14 @@ class SessionsController < ApplicationController
     redirect_to '/auth/facebook'
   end
 
+  def facebook
+    redirect_to '/auth/facebook'
+  end
+
+  def twitter
+    redirect_to '/auth/twitter'
+  end
+
   def create
     auth = request.env["omniauth.auth"]
     user = User.where(:provider => auth['provider'],
