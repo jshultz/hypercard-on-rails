@@ -21,6 +21,13 @@ group :development do
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem "pry-byebug"
+  gem "byebug"
+  gem "awesome_print"
+  gem "pry-rails"
+  gem "pry-doc"
+  gem "meta_request"
+  gem 'did_you_mean'
 end
 group :development, :test do
   gem 'sqlite3'
