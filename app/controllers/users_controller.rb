@@ -10,4 +10,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def edit
+    @user = User.find(params[:id])
+    @profile = Profile.find_or_create_by(id: params[:id])
+  end
+
 end

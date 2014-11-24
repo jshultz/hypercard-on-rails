@@ -14,5 +14,5 @@
 <% end %>
 <% if user_signed_in? %>
     <li><%= link_to 'Users', users_path %></li>
-    <li><%= link_to 'Profile', user_path(@current_user.id) %></li>
+    <li><%= link_to 'Edit Your Profile', edit_profile_path(@current_user.id) %></li>
 <% end %>

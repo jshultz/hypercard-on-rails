@@ -15,6 +15,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'figaro', '~> 1.0.0'
+gem 'mysql2'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -30,7 +31,7 @@ group :development do
   gem 'did_you_mean'
 end
 group :development, :test do
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
 group :production do
   gem 'pg'
