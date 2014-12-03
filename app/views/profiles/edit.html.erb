@@ -4,7 +4,8 @@
 <%= form_for @profile do |f| %>
     First name: <%= f.text_field :first_name %><br />
     Last name : <%= f.text_field :last_name %><br />
-    Birth Date : <%= f.text_field :date_of_birth %>
+    Birth Date : <%= f.text_field :date_of_birth %> <br/>
+    Avatar : <%= f.file_field :avatar %>
 
     <%= f.submit %>
 <% end %>

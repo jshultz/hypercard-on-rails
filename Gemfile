@@ -16,6 +16,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'figaro', '~> 1.0.0'
 gem 'mysql2'
+gem "paperclip", "~> 4.2"
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -30,11 +31,11 @@ group :development do
   gem "meta_request"
   gem 'did_you_mean'
 end
-group :development, :test do
-  # gem 'sqlite3'
-end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
   gem 'unicorn'
+end
+group :test do
+  gem 'sqlite3'
 end
