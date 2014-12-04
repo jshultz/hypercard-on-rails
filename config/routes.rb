@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/signin/twitter' => 'sessions#twitter', :as => :twitter_signin
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure'
+  get "/pages/*id" => 'pages#show', as: :page, format: false
 end
