@@ -1,5 +1,16 @@
-<h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
-<%= image_tag @user.profile.avatar.url %>
-<%= image_tag @user.profile.avatar.url(:medium) %>
-<%= image_tag @user.profile.avatar.url(:thumb) %>
+<div class="row">
+  <div class="col-lg-12">
+    <h3><%= @user.name if @user.name %></h3>
+    <p><strong>A Title Goes HEre</strong></p>
+    <p><em>A tag line of something goes here.</em></p>
+  </div>
+  <div class="clearfix visible-xs-block"></div>
+</div>
+<div class="row">
+  <div class="col-xs-4 col-lg-1">
+    <%= image_tag @user.profile.avatar.url(:thumb), class: "img-responsive noblock img-rounded" %>
+  </div>
+  <div class="col-xs-8 col-lg-11">
+    <p>Random Stuff</p>
+  </div>
+</div>

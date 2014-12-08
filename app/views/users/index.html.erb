@@ -2,15 +2,15 @@
   <div class="row">
     <h3>Users</h3>
     <div class="column">
-      <table class="table">
-        <tbody>
+
           <% @users.each do |user| %>
-            <tr>
-              <%= render user %>
-            </tr>
+
+              <div class="row">
+                <%= render user %>
+              </div>
+
           <% end %>
-        </tbody>
-      </table>
+
     </div>
   </div>
 </div>
