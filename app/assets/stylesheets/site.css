@@ -1,3 +1,7 @@
 img.noblock {
     display: inline;
 }
+
+#profile-background {
+    background-repeat: no-repeat; background-size: 100%;
+}
