@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   def twitter_news(twitter_user)
-    binding.pry
     client = Twitter::REST::Client.new do |config|
       config.consumer_key = Settings.twitter.consumer_key
       config.consumer_secret = Settings.twitter.consumer_secret
