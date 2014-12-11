@@ -29,6 +29,9 @@ db/*.sqlite3
 .sass-cache
 /config/config.yml
 /config/database.yml
+/config/settings.yml
+/config/environments/development.yml
+/config/environments/production.yml
 /config/local_env.yml
 /coverage.data
 /coverage/
@@ -81,3 +84,7 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

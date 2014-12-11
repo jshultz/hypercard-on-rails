@@ -1,16 +1,32 @@
 <div class="row">
   <div id="profile-background" class="col-lg-12" style="background-image: url('<%= @user.profile.profilebg.url(:large) %>');">
-    <h3><%= @user.name if @user.name %></h3>
-    <p><strong>A Title Goes HEre</strong></p>
-    <p><em>A tag line of something goes here.</em></p>
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="profileText">
+          <h3><%= @user.name if @user.name %></h3>
+          <p><strong>A Title Goes HEre</strong></p>
+          <p><em>A tag line of something goes here.</em></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4 col-lg-1">
+        <%= image_tag @user.profile.avatar.url(:thumb), class: "img-responsive noblock img-rounded" %>
+      </div>
+      <div id="profileMessage" class="col-xs-8 col-lg-11">
+        <p>Random Stuff</p>
+      </div>
+    </div>
   </div>
-  <div class="clearfix visible-xs-block"></div>
 </div>
 <div class="row">
-  <div class="col-xs-4 col-lg-1">
-    <%= image_tag @user.profile.avatar.url(:thumb), class: "img-responsive noblock img-rounded" %>
-  </div>
-  <div class="col-xs-8 col-lg-11">
-    <p>Random Stuff</p>
+  <div class="col-sm-12">
+
+    <ul>
+      <% @tweet_news.each do |tweet| %>
+          <li><%= link_to tweet.text, "#{tweet.url}" %></li>
+      <% end %>
+    </ul>
+
   </div>
 </div>

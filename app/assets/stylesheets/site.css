@@ -5,3 +5,22 @@ img.noblock {
 #profile-background {
     background-repeat: no-repeat; background-size: 100%;
 }
+
+#profileMessage {
+    background: rgba(255,255,255,0.5);
+    background-size: 100% 100%;
+    display: block;
+    min-height: 100px;
+}
+
+#profileText {
+    color: #ffffff;
+}
+
+@media (max-width: 375px) {
+
+    #profile-background {
+        background-repeat: no-repeat; background-size: 100%;
+    }
+
+}

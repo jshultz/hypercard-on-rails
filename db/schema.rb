@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210005043) do
+ActiveRecord::Schema.define(version: 20141211032614) do
 
   create_table "profiles", force: true do |t|
     t.string   "first_name"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20141210005043) do
     t.string   "profilebg_content_type"
     t.integer  "profilebg_file_size"
     t.datetime "profilebg_updated_at"
+    t.text     "twitteruser"
+    t.text     "facebookuser"
   end
 
   create_table "users", force: true do |t|
