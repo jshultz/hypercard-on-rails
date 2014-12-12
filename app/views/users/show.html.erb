@@ -22,9 +22,24 @@
 <div class="row">
   <div class="col-sm-12">
 
-    <ul>
+    <ul id="tweet-feed">
       <% @tweet_news.each do |tweet| %>
-          <li><%= link_to tweet.text, "#{tweet.url}" %></li>
+          <li>
+            <div class="row">
+              <div class="hidden-xs col-sm-1 col-md-1 col-lg-1">
+                <%= image_tag tweet.user.profile_image_url, class: "img-responsive noblock" %>
+              </div>
+              <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11">
+
+
+                <span><%= tweet.text %> <br>
+                  <% d = DateTime.parse(tweet.created_at.to_s) %>
+                <% created_link = tweet.user.screen_name + " | " + d.strftime('%m/%d/%y | %H:%M %Z').to_s %>
+                  <%= link_to created_link, "#{tweet.url}" %>
+              </span>
+              </div>
+            </div>
+          </li>
       <% end %>
     </ul>
 

@@ -17,6 +17,21 @@ img.noblock {
     color: #ffffff;
 }
 
+/* Users / Twitter Feed */
+
+#tweet-feed {
+    list-style: none;
+    padding-left: 0;
+}
+
+#tweet-feed li {
+    margin: 5px 0;
+    background-color: #fff;
+    padding: 5px;
+}
+
+/* Media Queries */
+
 @media (max-width: 375px) {
 
     #profile-background {
