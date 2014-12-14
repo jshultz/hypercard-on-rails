@@ -20,6 +20,8 @@ gem "paperclip", "~> 4.2"
 gem 'hpricot'
 gem 'twitter'
 gem "rails_config"
+gem 'paperclip-meta'
+gem 'paperclip-av-transcoder'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

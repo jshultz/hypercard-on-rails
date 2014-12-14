@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211032614) do
+ActiveRecord::Schema.define(version: 20141214223822) do
 
   create_table "profiles", force: true do |t|
     t.string   "first_name"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20141211032614) do
     t.datetime "profilebg_updated_at"
     t.text     "twitteruser"
     t.text     "facebookuser"
+    t.text     "avatar_meta"
+    t.text     "profilebg_meta"
+    t.text     "profilevideo_meta"
+    t.string   "profilevideo_file_name"
+    t.string   "profilevideo_content_type"
+    t.integer  "profilevideo_file_size"
+    t.datetime "profilevideo_updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -39,5 +46,18 @@ ActiveRecord::Schema.define(version: 20141211032614) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "videos", force: true do |t|
+    t.string   "profilevideo_file_name"
+    t.string   "profilevideo_content_type"
+    t.integer  "profilevideo_file_size"
+    t.datetime "profilevideo_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "video_meta"
+    t.integer  "user_id"
+  end
+
+  add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree
 
 end

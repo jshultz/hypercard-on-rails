@@ -29,6 +29,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (5.0.1.20140414130214)
+    av (0.7.1)
+      cocaine
     awesome_print (1.2.0)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
@@ -133,6 +135,11 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    paperclip-av-transcoder (0.6.2)
+      av (>= 0.7.1)
+      paperclip (>= 2.5.2)
+    paperclip-meta (1.1.0)
+      paperclip (>= 3.0.2, < 5.0)
     pg (0.17.1)
     polyglot (0.3.5)
     pry (0.10.1)
@@ -256,6 +263,8 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter
   paperclip (~> 4.2)
+  paperclip-av-transcoder
+  paperclip-meta
   pg
   pry-byebug
   pry-doc

@@ -17,10 +17,9 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    binding.pry
     params[:user_id] = current_user.id
     profile = Profile.find params[:id]
-
-
     if profile.update(profile_params)
       redirect_to show
     else
@@ -31,7 +30,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:id, :first_name, :last_name, :date_of_birth, :user_id, :avatar, :profilebg, :twitteruser, :facebookuser)
+    params.require(:profile).permit(:id, :first_name, :last_name, :date_of_birth, :user_id, :avatar, :profilebg, :profilevideo, :twitteruser, :facebookuser)
   end
 
 

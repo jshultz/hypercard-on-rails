@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :videos
+
   resources :users
   resources :profiles
   resources :twitter
+  resources :videos
   root to: 'visitors#index'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new', :as => :signin
