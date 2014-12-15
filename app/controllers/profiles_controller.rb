@@ -17,7 +17,6 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    binding.pry
     params[:user_id] = current_user.id
     profile = Profile.find params[:id]
     if profile.update(profile_params)
