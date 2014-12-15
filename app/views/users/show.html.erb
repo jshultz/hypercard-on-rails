@@ -21,7 +21,8 @@
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <% @user.videos.each do |video| %>
+    <% @user.videos.map do |item| %>
+        <%= item.profilevideo_file_name %>
     <% end %>
   </div>
 </div>
