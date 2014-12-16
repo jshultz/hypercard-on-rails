@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214223822) do
+ActiveRecord::Schema.define(version: 20141216143255) do
 
   create_table "profiles", force: true do |t|
     t.string   "first_name"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20141214223822) do
     t.datetime "profilevideo_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "video_meta"
+    t.text     "profilevideo_meta"
     t.integer  "user_id"
   end
 
