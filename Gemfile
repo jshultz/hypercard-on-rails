@@ -37,9 +37,9 @@ group :development do
   gem 'did_you_mean'
 end
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
   gem 'unicorn'
+  gem 'mysql2'
 end
 group :test do
   gem 'sqlite3'
