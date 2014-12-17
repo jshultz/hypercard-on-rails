@@ -15,7 +15,6 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'figaro', '~> 1.0.0'
-gem 'mysql2'
 gem "paperclip", "~> 4.2"
 gem 'hpricot'
 gem 'twitter'
@@ -23,6 +22,7 @@ gem "rails_config"
 gem 'paperclip-meta'
 gem 'paperclip-av-transcoder'
 group :development do
+  gem 'mysql2'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'hub', :require=>nil
@@ -37,9 +37,11 @@ group :development do
   gem 'did_you_mean'
 end
 group :production do
+  gem 'pg'
+  gem 'heroku'
   gem 'rails_12factor'
-  gem 'unicorn'
+  gem 'thin'
 end
 group :test do
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
