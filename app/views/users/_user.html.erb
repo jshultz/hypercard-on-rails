@@ -1,6 +1,6 @@
 
 <div class="col-lg-4 col-xs-4">
-  <%= image_tag user.profile.avatar.url(:thumb) %>
+  <%= image_tag user.profile.avatar.url(:thumb) if respond_to? user.profile %>
 </div>
 <div class="col-lg-8 col-xs-7">
   <%= link_to user.name, user %>
