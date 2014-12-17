@@ -74,7 +74,6 @@ GEM
     hashie (3.3.1)
     high_voltage (2.2.1)
     hike (1.2.3)
-    hpricot (0.8.6)
     http (0.6.3)
       http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
@@ -253,7 +252,6 @@ DEPENDENCIES
   did_you_mean
   figaro (~> 1.0.0)
   high_voltage
-  hpricot
   hub
   jbuilder (~> 2.0)
   jquery-rails

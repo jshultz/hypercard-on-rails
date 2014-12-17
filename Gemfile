@@ -15,9 +15,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'figaro', '~> 1.0.0'
 gem "paperclip", "~> 4.2"
-gem 'hpricot'
 gem 'twitter'
-gem "rails_config"
+gem "rails_config" # using for Twitter and Facebook Config Settings
 gem 'paperclip-meta'
 gem 'paperclip-av-transcoder'
 group :development do
