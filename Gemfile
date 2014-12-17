@@ -38,9 +38,9 @@ group :development do
 end
 group :production do
   gem 'pg'
-  gem 'heroku'
   gem 'rails_12factor'
-  gem 'thin'
+  gem 'unicorn'
+  gem 'rack-timeout'
 end
 group :test do
   # gem 'sqlite3'
