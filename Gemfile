@@ -37,8 +37,10 @@ group :development do
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
   gem 'unicorn'
   gem 'rack-timeout'
+  gem 'sprockets_better_errors'
 end
 group :test do
   # gem 'sqlite3'
