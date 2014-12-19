@@ -139,7 +139,6 @@ GEM
       paperclip (>= 2.5.2)
     paperclip-meta (1.1.0)
       paperclip (>= 3.0.2, < 5.0)
-    pg (0.17.1)
     polyglot (0.3.5)
     pry (0.10.1)
       coderay (~> 1.1.0)
@@ -265,7 +264,6 @@ DEPENDENCIES
   paperclip (~> 4.2)
   paperclip-av-transcoder
   paperclip-meta
-  pg
   pry-byebug
   pry-doc
   pry-rails

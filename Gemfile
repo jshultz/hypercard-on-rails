@@ -36,7 +36,7 @@ group :development do
   gem 'did_you_mean'
 end
 group :production do
-  gem 'pg'
+  gem 'mysql2'
   gem 'rails_12factor'
   gem 'unicorn'
   gem 'rack-timeout'
