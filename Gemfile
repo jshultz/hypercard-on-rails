@@ -19,9 +19,9 @@ gem 'twitter'
 gem "rails_config" # using for Twitter and Facebook Config Settings
 gem 'paperclip-meta'
 gem 'paperclip-av-transcoder'
+gem 'mysql2'
 group :development do
   gem 'spring'
-  gem 'mysql2'
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'hub', :require=>nil
@@ -36,7 +36,6 @@ group :development do
   gem 'did_you_mean'
 end
 group :production do
-  gem 'mysql2'
   gem 'rails_12factor'
   gem 'unicorn'
   gem 'rack-timeout'
