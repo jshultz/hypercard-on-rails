@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  resources :videos
-
   resources :users
   resources :profiles
   resources :twitter

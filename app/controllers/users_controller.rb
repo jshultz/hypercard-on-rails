@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
-  before_filter :correct_user?, :except => [:index]
+  before_filter :authenticate_user!, except: :show
+  before_filter :correct_user?, :except => [:index, :show]
 
   def index
     @users = User.all
   end
 
   def show
+    @current_user = User.find(current_user.id) if user_signed_in?
     @user = User.find(params[:id])
     @profile = Profile.find(params[:id])
     @twitterfeed = twitter_news(@user.profile.twitteruser) if @user.profile.twitteruser.present?

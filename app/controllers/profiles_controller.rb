@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
     params[:user_id] = current_user.id
     profile = Profile.find params[:id]
     if profile.update(profile_params)
-      redirect_to show
+      redirect_to user_path current_user.id
     else
       # error handling
     end
