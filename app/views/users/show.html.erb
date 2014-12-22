@@ -4,8 +4,8 @@
       <div class="col-sm-12">
         <div id="profileText">
           <h3><%= @user.name if @user.name %></h3>
-          <p><strong>A Title Goes HEre</strong></p>
-          <p><em>A tag line of something goes here.</em></p>
+          <p><strong><%= @user.profile.title if @user.profile.title.present? %></strong></p>
+          <p><em><%= @user.profile.tagline if @user.profile.tagline.present? %></em></p>
         </div>
       </div>
     </div>
@@ -14,7 +14,7 @@
         <%= image_tag @user.profile.avatar.url(:thumb), class: "img-responsive noblock img-rounded" %>
       </div>
       <div id="profileMessage" class="col-xs-8 col-lg-11">
-        <p>Random Stuff</p>
+        <p><%= @user.profile.random if @user.profile.random.present? %></p>
       </div>
     </div>
   </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141216143255) do
+ActiveRecord::Schema.define(version: 20141222141249) do
 
   create_table "profiles", force: true do |t|
     t.string   "first_name"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 20141216143255) do
     t.string   "profilevideo_content_type"
     t.integer  "profilevideo_file_size"
     t.datetime "profilevideo_updated_at"
+    t.text     "title"
+    t.text     "tagline"
+    t.text     "random"
   end
 
   create_table "users", force: true do |t|
