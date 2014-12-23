@@ -1,5 +1,8 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
+  has_one :profile_theme
+  accepts_nested_attributes_for :profile_theme
+  
   has_attached_file :avatar,
                     :url => "/images/:attachment/:hash/:id_:basename.:extension",
                     :path => ":rails_root/public/images/:attachment/:hash/:id_:basename.:extension",
