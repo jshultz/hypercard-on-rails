@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223144310) do
+ActiveRecord::Schema.define(version: 20141223150525) do
 
   create_table "profile_themes", force: true do |t|
-    t.text "profileTextH1Color"
-    t.text "profileTextTitleColor"
-    t.text "profileTextTaglineColor"
-    t.text "profileMessageBGColor"
+    t.text    "profileTextH1Color"
+    t.text    "profileTextTitleColor"
+    t.text    "profileTextTaglineColor"
+    t.text    "profileMessageBGColor"
+    t.integer "profile_id"
   end
+
+  add_index "profile_themes", ["profile_id"], name: "index_profile_themes_on_profile_id", using: :btree
 
   create_table "profiles", force: true do |t|
     t.string   "first_name"
