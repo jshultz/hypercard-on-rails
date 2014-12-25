@@ -4,8 +4,8 @@
       <div class="col-sm-12">
         <div id="profileText">
           <h3><%= @user.name if @user.name %></h3>
-          <p><strong><%= @user.profile.title if @user.profile.title.present? %></strong></p>
-          <p><em><%= @user.profile.tagline if @user.profile.tagline.present? %></em></p>
+          <p class="title"><strong><%= @user.profile.title if @user.profile.title.present? %></strong></p>
+          <p class="tagline"><em><%= @user.profile.tagline if @user.profile.tagline.present? %></em></p>
         </div>
       </div>
     </div>
@@ -58,3 +58,11 @@
 
   </div>
 </div>
+
+<style>
+  <%= "#profileText h3 { color: #{@user.profile.profile_theme.profileTextH1Color}; }" if @user.profile.profile_theme.profileTextH1Color.present? %>
+
+  <%= "#profileText .title { color: #{@user.profile.profile_theme.profileTextTitleColor}; }" if @user.profile.profile_theme.profileTextTitleColor.present? %>
+
+  <%= "#profileText .tagline { color: #{@user.profile.profile_theme.profileTextTaglineColor}; }" if @user.profile.profile_theme.profileTextTaglineColor.present? %>
+</style>

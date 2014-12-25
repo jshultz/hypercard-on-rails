@@ -43,14 +43,14 @@
             <%= f.label :random %> <%= f.text_field :random, class: "form-control" %>
           </fieldset>
         </div>
-        <div class="form-group">
+        <div id="theme" class="form-group">
           <fieldset>
             <legend>Theme:</legend>
             <%= fields_for @profile.profile_theme do |ff| %>
-                <%= ff.label :profileTextH1Color %> <%= ff.text_field :profileTextH1Color, class: "form-control" %>
-                <%= ff.label :profileTextTitleColor %> <%= ff.text_field :profileTextTitleColor, class: "form-control" %>
-                <%= ff.label :profileTextTaglineColor %> <%= ff.text_field :profileTextTaglineColor, class: "form-control" %>
-                <%= ff.label :profileMessageBGColor %> <%= ff.text_field :profileMessageBGColor, class: "form-control" %>
+                <%= ff.label :profileTextH1Color, 'Profile H1 Headline Color' %> <%= ff.color_field :profileTextH1Color, class: "form-control" %>
+                <%= ff.label :profileTextTitleColor, 'Profile Title Text Color' %> <%= ff.color_field :profileTextTitleColor, class: "form-control" %>
+                <%= ff.label :profileTextTaglineColor, 'Profile Tag Line Color' %> <%= ff.color_field :profileTextTaglineColor, class: "form-control" %>
+                <%= ff.label :profileMessageBGColor, 'Profile Message Background Color' %> <%= ff.color_field :profileMessageBGColor, class: "form-control" %>
             <% end %>
           </fieldset>
         </div>

@@ -2,33 +2,46 @@ img.noblock {
     display: inline;
 }
 
-#profile-background {
-    background-repeat: no-repeat; background-size: 100%;
-}
+/* Profile Page */
 
-#profileMessage {
-    background: rgba(255,255,255,0.5);
-    background-size: 100% 100%;
-    display: block;
-    min-height: 100px;
-}
+    #profile-background {
+        background-repeat: no-repeat; background-size: 100%;
+    }
 
-#profileText {
-    color: #ffffff;
-}
+    #profileMessage {
+        background: rgba(255,255,255,0.5);
+        background-size: 100% 100%;
+        display: block;
+        min-height: 100px;
+    }
+
+    #profileText h3 {
+        color: #000000;
+    }
+
+    #profileText .title {
+        color: #000000;
+    }
+
+    #profileText .tagline {
+        color: #000000;
+    }
+
+
+/* End Profile Page */
 
 /* Users / Twitter Feed */
 
-#tweet-feed {
-    list-style: none;
-    padding-left: 0;
-}
+    #tweet-feed {
+        list-style: none;
+        padding-left: 0;
+    }
 
-#tweet-feed li {
-    margin: 5px 0;
-    background-color: #fff;
-    padding: 5px;
-}
+    #tweet-feed li {
+        margin: 5px 0;
+        background-color: #fff;
+        padding: 5px;
+    }
 
 /* Media Queries */
 
