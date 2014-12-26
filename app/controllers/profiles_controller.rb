@@ -49,11 +49,11 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).permit(:id, :first_name, :last_name, :date_of_birth, :user_id, :avatar, :profilebg, :profilevideo, :twitteruser, :facebookuser, :title, :tagline, :random,
-                                    profile_theme_attributes: [ :profileTextH1Color, :profileTextTitleColor, :profileTextTaglineColor, :profileMessageBGColor, :profile_id])
+                                    profile_theme_attributes: [ :profileTextH1Color, :profileTextTitleColor, :profileTextTaglineColor, :profileMessageBGColor, :profilebgcolor, :profile_id])
   end
 
   def profile_theme_params
-    params.require(:profile_theme).permit(:profileTextH1Color, :profileTextTitleColor, :profileTextTaglineColor, :profileMessageBGColor, :profile_id)
+    params.require(:profile_theme).permit(:profileTextH1Color, :profileTextTitleColor, :profileTextTaglineColor, :profileMessageBGColor, :profilebgcolor, :profile_id)
   end
 
 

@@ -1,5 +1,5 @@
 <div class="row">
-  <div id="profile-background" class="col-lg-12" style="background-image: url('<%= @user.profile.profilebg.url(:large) %>');">
+  <div id="profile-background" class="col-lg-12">
     <div class="row">
       <div class="col-sm-12">
         <div id="profileText">
@@ -60,9 +60,15 @@
 </div>
 
 <style>
+
+  #profile-background { background: <%= @user.profile.profile_theme.profilebgcolor %> url('<%= @user.profile.profilebg.url(:large) if !@user.profile.profilebgnophoto %>') }
+
   <%= "#profileText h3 { color: #{@user.profile.profile_theme.profileTextH1Color}; }" if @user.profile.profile_theme.profileTextH1Color.present? %>
 
   <%= "#profileText .title { color: #{@user.profile.profile_theme.profileTextTitleColor}; }" if @user.profile.profile_theme.profileTextTitleColor.present? %>
 
   <%= "#profileText .tagline { color: #{@user.profile.profile_theme.profileTextTaglineColor}; }" if @user.profile.profile_theme.profileTextTaglineColor.present? %>
+
+  <%= "#profileMessage { background-color: #{@user.profile.profile_theme.profileTextTaglineColor}; }" if @user.profile.profile_theme.profileTextTaglineColor.present? %>
+
 </style>
