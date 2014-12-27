@@ -61,7 +61,7 @@
 
 <style>
 
-  #profile-background { background: <%= @user.profile.profile_theme.profilebgcolor %> url('<%= @user.profile.profilebg.url(:large) if !@user.profile.profilebgnophoto %>') }
+  #profile-background { background: <%= @user.profile.profile_theme.profilebgcolor if @user.profile.profile_theme.profilebgcolor.present? %> url('<%= @user.profile.profilebg.url(:large) if !@user.profile.profilebgnophoto %>') }
 
   <%= "#profileText h3 { color: #{@user.profile.profile_theme.profileTextH1Color}; }" if @user.profile.profile_theme.profileTextH1Color.present? %>
 

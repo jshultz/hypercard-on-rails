@@ -20,6 +20,7 @@ gem "rails_config" # using for Twitter and Facebook Config Settings
 gem 'paperclip-meta'
 gem 'paperclip-av-transcoder'
 gem 'mysql2'
+gem "koala", "~> 1.10.1"
 group :development do
   gem 'spring'
   gem 'better_errors'
