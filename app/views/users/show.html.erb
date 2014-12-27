@@ -61,14 +61,18 @@
 
 <style>
 
-  #profile-background { background: <%= @user.profile.profile_theme.profilebgcolor if @user.profile.profile_theme.profilebgcolor.present? %> url('<%= @user.profile.profilebg.url(:large) if !@user.profile.profilebgnophoto %>') }
+  <% if @user.profile.profile_theme.present? %>
 
-  <%= "#profileText h3 { color: #{@user.profile.profile_theme.profileTextH1Color}; }" if @user.profile.profile_theme.profileTextH1Color.present? %>
+      #profile-background { background: <%= @user.profile.profile_theme.profilebgcolor if @user.profile.profile_theme.profilebgcolor.present? %> url('<%= @user.profile.profilebg.url(:large) if !@user.profile.profilebgnophoto %>') }
 
-  <%= "#profileText .title { color: #{@user.profile.profile_theme.profileTextTitleColor}; }" if @user.profile.profile_theme.profileTextTitleColor.present? %>
+      <%= "#profileText h3 { color: #{@user.profile.profile_theme.profileTextH1Color}; }" if @user.profile.profile_theme.profileTextH1Color.present? %>
 
-  <%= "#profileText .tagline { color: #{@user.profile.profile_theme.profileTextTaglineColor}; }" if @user.profile.profile_theme.profileTextTaglineColor.present? %>
+      <%= "#profileText .title { color: #{@user.profile.profile_theme.profileTextTitleColor}; }" if @user.profile.profile_theme.profileTextTitleColor.present? %>
 
-  <%= "#profileMessage { background-color: #{@user.profile.profile_theme.profileTextTaglineColor}; }" if @user.profile.profile_theme.profileTextTaglineColor.present? %>
+      <%= "#profileText .tagline { color: #{@user.profile.profile_theme.profileTextTaglineColor}; }" if @user.profile.profile_theme.profileTextTaglineColor.present? %>
 
+      <%= "#profileMessage { background-color: #{@user.profile.profile_theme.profileTextTaglineColor}; }" if @user.profile.profile_theme.profileTextTaglineColor.present? %>
+
+  <% end %>
+        
 </style>
