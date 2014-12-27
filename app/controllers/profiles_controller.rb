@@ -48,8 +48,8 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:id, :first_name, :last_name, :date_of_birth, :user_id, :avatar, :profilebg, :profilevideo, :twitteruser, :facebookuser, :title, :tagline, :random,
-                                    profile_theme_attributes: [ :profileTextH1Color, :profileTextTitleColor, :profileTextTaglineColor, :profileMessageBGColor, :profilebgcolor, :profile_id])
+    params.require(:profile).permit(:id, :first_name, :last_name, :date_of_birth, :user_id, :avatar, :profilebg, :profilevideo, :twitteruser, :facebookuser, :title, :tagline, :random, :profilebgnophoto,
+                                    :profile_theme_attributes => [ :id, :profileTextH1Color, :profileTextTitleColor, :profileTextTaglineColor, :profileMessageBGColor, :profilebgcolor, :profile_id])
   end
 
   def profile_theme_params
