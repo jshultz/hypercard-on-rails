@@ -7,10 +7,43 @@ class UsersController < ApplicationController
   end
 
   def show
+    @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://localhost:3000/users/#{current_user.id}")
+
+    # if params[:code]
+    #
+    #   # acknowledge code and get access token from FB
+    #   session[:access_token] = @oauth.get_access_token(params[:code])
+    #
+    #   access_token = @oauth.get_access_token_info(params[:code])
+    #
+    # end
+    #
+    app_access_token = @oauth.get_app_access_token
+    #
+    # # auth established, now do a graph call:
+    #
+    # @api = Koala::Facebook::API.new(session[:access_token])
+
+
+
+    begin
+      @graph_data = @api.get_object("/me/statuses", "fields"=>"message")
+    rescue Exception=>ex
+      puts ex.message
+    end
+
+    @graph = Koala::Facebook::API.new(app_access_token)
+
     @current_user = User.find(current_user.id) if user_signed_in?
     @user = User.find(params[:id])
     @profile = Profile.find(params[:id])
+
     @twitterfeed = twitter_news(@user.profile.twitteruser) if @user.profile.twitteruser.present?
+    begin
+      @facebookfeed = @graph.get_connection(@user.profile.facebookuser,"feed") if !@user.profile.facebookuser.blank?
+    rescue Exception=>ex
+
+    end
   end
 
   def edit
