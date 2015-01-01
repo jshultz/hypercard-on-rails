@@ -32,12 +32,14 @@ img.noblock {
 
 /* Users / Twitter Feed */
 
-    #tweet-feed {
+    #tweet-feed,
+    #facebook-feed {
         list-style: none;
         padding-left: 0;
     }
 
-    #tweet-feed li {
+    #tweet-feed li,
+    #facebook-feed li {
         margin: 5px 0;
         background-color: #fff;
         padding: 5px;

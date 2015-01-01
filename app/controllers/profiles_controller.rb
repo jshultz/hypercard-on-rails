@@ -47,7 +47,7 @@ class ProfilesController < ApplicationController
 
   def authorize_facebook
 
-    @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://localhost:3000/users/#{current_user.id}")
+    @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://localhost:3000/users/#{current_user.id}/edit")
     @auth_url =  @oauth.url_for_oauth_code(:permissions=>"read_stream")
     puts session.to_s + "<<< session"
 

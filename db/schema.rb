@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226011926) do
+ActiveRecord::Schema.define(version: 20150101064341) do
 
   create_table "profile_themes", force: true do |t|
     t.text    "profileTextH1Color"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20141226011926) do
     t.string   "uid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "facebooktoken"
   end
 
   create_table "videos", force: true do |t|

@@ -64,7 +64,7 @@
     <ul id="facebook-feed">
         <% @facebookfeed.each do |post| %>
           <li>
-            <%= post["story"] %>
+            <%= story = post["story"] || post["message"] %>
             |
             <% d = DateTime.parse(post["created_time"].to_s) %>
             <%= d.strftime('%m/%d/%y | %H:%M %Z').to_s %>
