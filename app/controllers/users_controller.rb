@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @twitterfeed = twitter_news(@user.profile.twitteruser) if @user.profile.twitteruser.present?
     begin
       @api = Koala::Facebook::API.new(@user.facebook_token) if @user.facebook_token.present?
-      @facebookfeed = @api.get_connection(@user.profile.facebookuser,"feed") if !@user.profile.facebookuser.blank? && @user.facebooktoken.present?
+      @facebookfeed = @api.get_connection(@user.profile.facebookuser,"feed") if !@user.profile.facebookuser.blank? && @user.facebook_token.present?
     rescue Exception=>ex
 
     end
