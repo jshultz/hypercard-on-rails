@@ -12,7 +12,6 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    binding.pry
     @user = User.find(params[:id])
     @profile = Profile.find_or_create_by(id: params[:id], user_id: current_user.id)
     @profile.profile_theme = ProfileTheme.find_or_create_by(profile_id: current_user.id)
