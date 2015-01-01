@@ -7,18 +7,13 @@ class UsersController < ApplicationController
   end
 
   def show
-
-    @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://#{request.host_with_port}/profiles/#{current_user.id}")
-    app_access_token = @oauth.get_app_access_token
-    @graph = Koala::Facebook::API.new(app_access_token)
-
     @current_user = User.find(current_user.id) if user_signed_in?
     @user = User.find(params[:id])
     @profile = Profile.find(params[:id])
 
     @twitterfeed = twitter_news(@user.profile.twitteruser) if @user.profile.twitteruser.present?
     begin
-      @api = Koala::Facebook::API.new(@user.facebooktoken) if @user.facebooktoken.present?
+      @api = Koala::Facebook::API.new(@user.facebook_token) if @user.facebook_token.present?
       @facebookfeed = @api.get_connection(@user.profile.facebookuser,"feed") if !@user.profile.facebookuser.blank? && @user.facebooktoken.present?
     rescue Exception=>ex
 

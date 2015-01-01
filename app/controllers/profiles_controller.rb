@@ -20,9 +20,11 @@ class ProfilesController < ApplicationController
       @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://#{request.host_with_port}/profiles/#{current_user.id}/edit")
 
       # acknowledge code and get access token from FB
-      session[:access_token] = @oauth.get_access_token(params[:code])
+      session_info = @oauth.get_access_token_info(params[:code])
+      session[:access_token] = session_info["access_token"]
+      expires = session_info["expires"]
 
-      @user.update_attributes(:facebooktoken => session[:access_token])
+      @user.update_attributes(:facebook_token => session[:access_token], :facebook_expires => expires)
     end
 
   end

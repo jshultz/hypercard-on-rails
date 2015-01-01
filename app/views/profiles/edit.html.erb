@@ -90,7 +90,7 @@
                 <%= f.label :facebookuser, 'Facebook User Name' %> <%= f.text_field :facebookuser, class: "form-control" %>
               </div>
               <div class="col-sm-6">
-                <%= link_to "Authorize Facebook", profiles_authorize_facebook_path(current_user.id) %>
+                <%= link_to "Authorize Facebook", profiles_authorize_facebook_path(current_user.id), class: "btn btn-primary" %>
               </div>
             </div>
           </fieldset>

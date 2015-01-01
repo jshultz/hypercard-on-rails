@@ -2,6 +2,14 @@ img.noblock {
     display: inline;
 }
 
+/* Edit Profile */
+
+form.edit_profile a.btn {
+    color: #ffffff;
+}
+
+/* End Edit Profile Page *?
+
 /* Profile Page */
 
     #profile-background {
