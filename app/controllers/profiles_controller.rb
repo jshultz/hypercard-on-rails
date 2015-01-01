@@ -12,9 +12,20 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    binding.pry
     @user = User.find(params[:id])
     @profile = Profile.find_or_create_by(id: params[:id], user_id: current_user.id)
     @profile.profile_theme = ProfileTheme.find_or_create_by(profile_id: current_user.id)
+
+    if params[:code]
+      @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://#{request.host_with_port}/profiles/#{current_user.id}/edit")
+
+      # acknowledge code and get access token from FB
+      session[:access_token] = @oauth.get_access_token(params[:code])
+
+      @user.update_attributes(:facebooktoken => session[:access_token])
+    end
+
   end
 
   def update
@@ -47,7 +58,7 @@ class ProfilesController < ApplicationController
 
   def authorize_facebook
 
-    @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://localhost:3000/users/#{current_user.id}/edit")
+    @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://#{request.host_with_port}/profiles/#{current_user.id}/edit")
     @auth_url =  @oauth.url_for_oauth_code(:permissions=>"read_stream")
     puts session.to_s + "<<< session"
 

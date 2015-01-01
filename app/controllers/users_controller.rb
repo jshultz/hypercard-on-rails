@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
 
-    @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://localhost:3000/users/#{current_user.id}")
+    @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://#{request.host_with_port}/profiles/#{current_user.id}")
     app_access_token = @oauth.get_app_access_token
     @graph = Koala::Facebook::API.new(app_access_token)
 
@@ -28,17 +28,6 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     @profile = Profile.find_or_create_by(id: params[:id])
-
-    if params[:code]
-      @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://localhost:3000/users/#{current_user.id}/edit")
-
-      # acknowledge code and get access token from FB
-      session[:access_token] = @oauth.get_access_token(params[:code])
-
-      @user.update_attributes(:facebooktoken => session[:access_token])
-
-
-    end
 
   end
 
