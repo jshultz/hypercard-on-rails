@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def facebook_token_expired?
+    DateTime.now.utc > self.facebook_expires
+  end
+
 end

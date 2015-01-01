@@ -13,8 +13,6 @@ class ProfilesController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @profile = Profile.find_or_create_by(id: params[:id], user_id: current_user.id)
-    @profile.profile_theme = ProfileTheme.find_or_create_by(profile_id: current_user.id)
 
     if params[:code]
       @oauth = Koala::Facebook::OAuth.new(Settings.facebook.app_id, Settings.facebook.app_secret, "http://#{request.host_with_port}/profiles/#{current_user.id}/edit")
@@ -22,10 +20,14 @@ class ProfilesController < ApplicationController
       # acknowledge code and get access token from FB
       session_info = @oauth.get_access_token_info(params[:code])
       session[:access_token] = session_info["access_token"]
-      expires = session_info["expires"]
+      expires = (Time.now + session_info["expires"].to_i)
 
       @user.update_attributes(:facebook_token => session[:access_token], :facebook_expires => expires)
     end
+
+    @get_new_token = @user.facebook_token_expired? if @user.facebook_expires.present?
+    @profile = Profile.find_or_create_by(id: params[:id], user_id: current_user.id)
+    @profile.profile_theme = ProfileTheme.find_or_create_by(profile_id: current_user.id)
 
   end
 
@@ -66,7 +68,6 @@ class ProfilesController < ApplicationController
     redirect_to @auth_url
 
   end
-
 
   private
 
