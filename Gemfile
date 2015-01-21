@@ -35,6 +35,7 @@ group :development do
   gem "pry-doc"
   gem "meta_request"
   gem 'did_you_mean'
+  gem 'bullet'
 end
 group :production do
   gem 'rails_12factor'

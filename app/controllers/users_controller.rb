@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :correct_user?, :except => [:index, :show]
 
   def index
-    @users = User.all
+    @users = User.all.includes(:profile)
   end
 
   def show

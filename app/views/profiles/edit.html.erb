@@ -22,7 +22,7 @@
         <!-- Photos -->
         <div class="form-group">
           <fieldset>
-            <legend>Photo:</legend>
+            <legend>Photo</legend>
             <div class="field-wrapper">
               <div class="row">
                 <div class="col-sm-12">
@@ -67,7 +67,7 @@
         <!-- Profile -->
         <div class="form-group">
           <fieldset>
-            <legend>Profile:</legend>
+            <legend>Profile</legend>
             <div class="field-wrapper">
               <div class="input-group">
                 <%= f.label :title, class:"sr-only" %> <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
@@ -83,7 +83,7 @@
         </div>
         <div id="theme" class="form-group">
           <fieldset>
-            <legend>Colors:</legend>
+            <legend>Colors</legend>
             <div class="field-wrapper">
               <%= fields_for @profile.profile_theme do |ff| %>
                   <%= ff.label :profileTextH1Color, 'Profile H1 Headline Color' %> <%= ff.color_field :profileTextH1Color, class: "form-control" %>
@@ -98,23 +98,30 @@
         <!-- Social Media -->
         <div class="form-group">
           <fieldset>
-            <div class="form-group">
-              <legend>Social Media:</legend>
-              <%= f.label :twitteruser, 'Twitter User Name' %>
-              <div class="input-group">
-                <span class="input-group-addon">@</span>
-                <%= f.text_field :twitteruser, class: "form-control" %>
+            <legend>Social Media</legend>
+
+            <div class="field-wrapper">
+
+              <div class="form-group">
+                <%= f.label :twitteruser, 'Twitter User Name' %>
+                <div class="input-group">
+                  <span class="input-group-addon">@</span>
+                  <%= f.text_field :twitteruser, class: "form-control" %>
+                </div>
               </div>
+              <div class="form-group">
+                <%= f.label :facebookuser, 'Facebook User Name', class: "sr-only" %>
+                <%= f.text_field :facebookuser, class: "form-control", placeholder: "Facebook User Name" %>
+              </div>
+              <div class="form-group">
+                <% styles = @get_new_token ? "btn btn-warning" : "btn btn-success" %>
+                <% btn_text = @get_new_token ? "Please Authorize Facebook" : "Facebook Authorized" %>
+                <%= link_to btn_text, profiles_authorize_facebook_path(current_user.id), class: styles %>
+              </div>
+
             </div>
-            <div class="form-group">
-              <%= f.label :facebookuser, 'Facebook User Name', class: "sr-only" %>
-              <%= f.text_field :facebookuser, class: "form-control", placeholder: "Facebook User Name" %>
-            </div>
-            <div class="form-group">
-              <% styles = @get_new_token ? "btn btn-warning" : "btn btn-success" %>
-              <% btn_text = @get_new_token ? "Please Authorize Facebook" : "Facebook Authorized" %>
-              <%= link_to btn_text, profiles_authorize_facebook_path(current_user.id), class: styles %>
-            </div>
+
+
           </fieldset>
         </div>
         <%= f.submit class: 'btn btn-default' %>

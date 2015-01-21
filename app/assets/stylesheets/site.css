@@ -1,3 +1,7 @@
+main {
+    background-color: #ffffff;
+}
+
 img.noblock {
     display: inline;
 }
@@ -11,6 +15,27 @@ form.edit_profile a.btn {
 form.edit_profile .field-wrapper {
     clear: both;
     display: none;
+    padding: 5px 4px;
+}
+
+form.edit_profile legend {
+    border-bottom: 0;
+}
+
+form.edit_profile .form-group {
+    margin: 5px 0 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+form.edit_profile legend {
+    border-bottom: 0;
+    display: block;
+    height: 30px;
+    margin-bottom: 0;
+    border-radius: 3px 3px 3px 3px;
+    padding: 4px 0 0 4px;
+    background-color: #eeeeee;
 }
 
 
